@@ -4,7 +4,7 @@
 # make it executable
 # sudo chmod +x /usr/bin/apt-add-repo
 # Run as sudo
-paramsarray="${@}"
+paramsarray=${@}
 repo_name=$1
 key_uri=$2
 repo_uri=$3
