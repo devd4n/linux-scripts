@@ -23,9 +23,9 @@ rm key.gpg
 
 #  Write sources list file in DEB822 format
 # 
-echo "Types: deb" | sudo tee /etc/apt/sources.list.d/$repo_name.sources
+echo "Types: deb deb-src" | sudo tee /etc/apt/sources.list.d/$repo_name.sources
 echo "URIs: $repo_uri" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
-echo "Suites: $(cat /etc/os-release | grep VERSION_CODENAME | cut -d ";" -f 2)" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
+echo "Suites: any" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
 echo "Components: main" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
 echo "Signed-By: /etc/apt/keyrings/$repo_name.gpg" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
 sudo apt update
