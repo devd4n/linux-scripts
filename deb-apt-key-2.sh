@@ -4,16 +4,17 @@
 # make it executable
 # sudo chmod +x /usr/bin/apt-add-repo
 # Run as sudo
-paramsarray=${@}
 repo_name=$1
 key_uri=$2
 repo_uri=$3
 suite=$4
-unset paramsarray[0]
-unset paramsarray[1]
-unset paramsarray[2]
-unset paramsarray[3]
-components=$paramsarray
+# Remove the previous 4 arguments from argument array
+shift;
+shift;
+shift;
+shift;
+# read the last arguments to components variable
+components="$@"
 
 wget -q -O key.gpg $key_uri
 typecount=$(file key.gpg | grep -c "PGP public key block Public-Key")
