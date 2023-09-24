@@ -25,7 +25,7 @@ rm key.gpg
 # 
 echo "Types: deb" | sudo tee /etc/apt/sources.list.d/$repo_name.sources
 echo "URIs: $repo_uri" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
-echo "Suites: stable" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
+echo "Suites: $(cut -d ";" -f 1)" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
 echo "Components: main" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
 echo "Signed-By: /etc/apt/keyrings/$repo_name.gpg" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
 sudo apt update
