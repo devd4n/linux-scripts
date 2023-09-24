@@ -28,6 +28,6 @@ echo "URIs: $repo_uri" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
 echo "Suites: stable" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
 echo "Components: main" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
 echo "Signed-By: /etc/apt/keyrings/$repo_name.gpg" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
-
+sudo apt update
 
 
