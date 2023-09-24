@@ -4,9 +4,9 @@
 # make it executable
 # sudo chmod +x /usr/bin/apt-add-repo
 # Run as sudo
-repo_name=$0
-repo_uri=$1
-key_uri=$2
+repo_name=$1
+repo_uri=$2
+key_uri=$3
 
 wget -q -O key.gpg $key_uri
 typecount=$(file key.gpg | grep -c "PGP public key block Public-Key")
