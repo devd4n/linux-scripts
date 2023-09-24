@@ -9,10 +9,10 @@ repo_name=$1
 key_uri=$2
 repo_uri=$3
 suite=$4
+unset paramsarray[0]
 unset paramsarray[1]
 unset paramsarray[2]
 unset paramsarray[3]
-unset paramsarray[4]
 components=$paramsarray
 
 wget -q -O key.gpg $key_uri
