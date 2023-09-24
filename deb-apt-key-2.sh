@@ -1,6 +1,6 @@
 #!/bin/bash
 # download this script to the bin folder
-# wget -O /usr/bin/apt-add-repo https://github.com/devd4n/linux-scripts/deb-apt-key-2.sh
+# wget -O /usr/bin/apt-add-repo https://raw.githubusercontent.com/devd4n/linux-scripts/main/deb-apt-key-2.sh
 # Run as sudo
 repo_name=$0
 key_uri=$1
