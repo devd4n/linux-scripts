@@ -10,7 +10,7 @@ key_uri=$3
 
 wget -q -O key.gpg $key_uri
 typecount=$(file key.gpg | grep -c "PGP public key block Public-Key")
-if [ $typecount > 0 ]
+if [[ $typecount > 0 ]]
 then
   gpg --no-default-keyring --keyring ./tmp.gpg --import key.gpg
   gpg --no-default-keyring --keyring ./tmp.gpg --export --output $repo_name.gpg
