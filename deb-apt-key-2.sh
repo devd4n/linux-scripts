@@ -1,6 +1,8 @@
 #!/bin/bash
 # download this script to the bin folder
-# wget -qO /usr/bin/apt-add-repo https://raw.githubusercontent.com/devd4n/linux-scripts/main/deb-apt-key-2.sh
+# sudo wget -qO /usr/bin/apt-add-repo https://raw.githubusercontent.com/devd4n/linux-scripts/main/deb-apt-key-2.sh
+# make it executable
+# sudo chmod +x /usr/bin/apt-add-repo
 # Run as sudo
 repo_name=$0
 repo_uri=$1
@@ -15,9 +17,9 @@ then
   rm tmp.gpg
   sudo mv $repo_name.gpg /etc/apt/keyrings/$repo_name.gpg
 else
-  sudo mv $key.gpg /etc/apt/keyrings/$repo_name.gpg
+  sudo mv key.gpg /etc/apt/keyrings/$repo_name.gpg
 fi
-rm $key.gpg
+rm key.gpg
 
 #  Write sources list file in DEB822 format
 # 
