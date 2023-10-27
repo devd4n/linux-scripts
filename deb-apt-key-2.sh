@@ -5,8 +5,8 @@
 # sudo chmod +x /usr/bin/apt-add-repo
 # Run as sudo
 repo_name=$1
-key_uri=$2
-repo_uri=$3
+repo_uri=$2
+key_uri=$3
 suite=$4
 # Remove the previous 4 arguments from argument array
 shift;
