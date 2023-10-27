@@ -34,7 +34,11 @@ rm key.gpg
 echo "Types: deb deb-src" | sudo tee /etc/apt/sources.list.d/$repo_name.sources
 echo "URIs: $repo_uri" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
 echo "Suites: $suite" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
-echo "Components: $components" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
+if $components == ""
+then
+else
+  echo "Components: $components" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
+fi
 echo "Signed-By: /etc/apt/keyrings/$repo_name.gpg" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
 sudo apt update
 
