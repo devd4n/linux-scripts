@@ -34,7 +34,7 @@ rm key.gpg
 echo "Types: deb deb-src" | sudo tee /etc/apt/sources.list.d/$repo_name.sources
 echo "URIs: $repo_uri" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
 echo "Suites: $suite" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
-if $components == ""; then
+if [[ "$components" == "" ]]; then
   echo ""
 else
   echo "Components: $components" | sudo tee -a /etc/apt/sources.list.d/$repo_name.sources
